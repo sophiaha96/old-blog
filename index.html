@@ -12,17 +12,19 @@
 	</head>
 		
 	<body>			
+		<!-- NAV BAR -->
 		<div class="navbar" id="topNav">
 			<a href="#">home</a>
 			<a href="#row">projects</a>
 			<a href="#writing">writing</a>
-			<a href="#">art</a>
-			<a href="#" class="social"><img src="fb.png"/></a>
-			<a href="#" class="social"><img src="ig.png"/></a>
-			<a href="#" class="social"><img src="ln.png"/></a>
+			<a href="#art">art</a>
+			<a href="https://www.facebook.com/Sophiekachu" class="social" target="_blank"><img src="fb.png"/></a>
+			<a href="https://www.instagram.com/sophiekachu/" class="social" target="_blank"><img src="ig.png"/></a>
+			<a href="https://www.linkedin.com/in/sophia-ha-827210120/" class="social" target="_blank"><img src="ln.png"/></a>
 		</div>
 		
-		<div class="wrapperHome">
+		<!-- HOME -->
+		<div class="wrapper">
 			<div class="home">
 				<h1>sophia ha</h1>
 				<p>electrical engineer</p>
@@ -30,63 +32,98 @@
 			<a href="#row" class="down"><img src="down-arrow.png"/></a>
 		</div>
 		
+		<!-- PROJECTS -->
 		<div class="row" id="row">
 			<div class="side">
-				<h2>Resume</h2>
-				<a href="#">PDF</a>
+				<h2>resume</h2>
+				<a href="https://docs.google.com/document/d/1eWL4yh3GPoyGquBotOJRcWyyN_qTKBcZG1n0jwawXAM/edit?usp=sharing" target="_blank">PDF</a>
 			</div>
 			
 			<div class="main">
-				<h2>Project 1</h2>
-				<h5>Project 1 Description, Date</h5>
+				<h2>project 1</h2>
+				<h5>project 1 description, Date</h5>
 				<br>
-				<p>Text about project 1</p>
-				<p>Blah blah</p>
+				<p>text about project 1</p>
+				<p>etc.</p>
 				
 				<br><br><hr class="solidLine"><br><br>
 				
-				<h2>Project 2</h2>
-				<h5>Project 2 Description, Date</h5>
+				<h2>project 2</h2>
+				<h5>project 2 Description, Date</h5>
 				<br>
-				<p>Text about project 2</p>
-				<p>Blah blah</p>
+				<p>text about project 2</p>
+				<p>etc.</p>
 				
-				<br><br><hr class="solidLine"><br><br>
-				<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-				
-				<hr class="solidLine">
+				<br><br><hr class="solidLine">
 			</div>
 		</div>
 		
+		<!-- WRITING -->
 		<div class="writing" id="writing">
-		<br>
-		<h2>Hope Springs Eternal</h2>
-		<h5>genre</h5>
-		<br>
-		<img src="hse.png"/>
-		<br>
-		<p></p>
-		
-		<br><br><hr class="solidLine"><br><br>
-		<h2>Corvus & Columba</h2>
-		<h5>genre</h5>
-		
-		
-		<br><br><hr class="solidLine"><br><br>
-		<h2>The Queen Procrastinates</h2>
-		<h5>genre</h5>
-		<br>
-		<img src="tqp.png"/>
-		<br>
-		<p></p>
-		
-		<br><br><hr class="solidLine"><br><br>
+			<!-- TABS -->
+			<div class="tab">
+				<button class="tablink" onclick="openTab(event, 'HSE')" id="defaultOpen"><h2>hope springs eternal</h2></button>
+				<button class="tablink" onclick="openTab(event, 'CC')"><h2>Corvus & Columba</h2></button>
+				<button class="tablink" onclick="openTab(event, 'TQP')"><h2>The Queen Procrastinates</h2></button>
+			</div>
+
+			<div id="HSE" class="tabcontent">
+				<h2>hope springs eternal</h2>
+				<h5>genre</h5>
+				<br>
+				<img src="hse.png"/>
+				<br>
+				<p></p>
+			</div>
+
+			<div id="CC" class="tabcontent">
+				<h2>corvus & columba</h2>
+				<h5>genre</h5>
+			</div>
+
+			<div id="TQP" class="tabcontent">
+				<h2>the queen procrastinates</h2>
+				<h5>genre</h5>
+				<br>
+				<img src="tqp.png"/>
+				<br>
+				<p></p>
+			</div>
 		</div>
 		
-		<div class="footer">
-			<h2>Footer</h2>
+		<!-- ART -->
+		<div class="wrapper">
+			<div class="art" id="art">
+				<h2>art</h2>
+			</div>
 		</div>
+		
+		<!-- TABS JAVASCRIPT -->	
+		<script>	
+		// Get the element with id="defaultOpen" and click on it
+		document.getElementById("defaultOpen").click();	
+
+		function openTab(evt, tabName) {
+		  // Declare all variables
+		  var i, tabcontent, tablink;
+
+		  // Get all elements with class="tabcontent" and hide them
+		  tabcontent = document.getElementsByClassName("tabcontent");
+		  for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+		  }
+
+		  // Get all elements with class="tablink" and remove the class "active"
+		  tablink = document.getElementsByClassName("tablink");
+		  for (i = 0; i < tablink.length; i++) {
+			tablink[i].className = tablink[i].className.replace(" active", "");
+		  }
+
+		  // Show the current tab, and add an "active" class to the link that opened the tab
+		  document.getElementById(tabName).style.display = "block";
+		  evt.currentTarget.className += " active";
+		} 
+		</script>
 		
 	</body>
-	</<disable-scrollbars>>
 </html>
