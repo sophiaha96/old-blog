@@ -120,9 +120,9 @@ body, html {
 }
 
 .projects img {
-	width: auto;
-	max-height: 500px;
-	max-width: 600px;
+	max-width: 30%;
+	max-height: 50%;
+	height: auto;
 	flex: 0.5;
 	padding: 20px;
 }
@@ -247,9 +247,8 @@ hr.solidLine {
 	border-top: 1px solid #ddd;
 }
 
-/* Responsive Layout - when the screen is <700px wide, nav links stack on top of each other instead of next to each other */
-
-@media screen and (max-width: 700px) {
+/* Responsive Layout - when the screen is <1000px wide, nav links stack on top of each other instead of next to each other */
+@media screen and (max-width: 1000px) {	
 	.navbar a {
 		font-size: 2vw;
 		float: left;
@@ -268,6 +267,7 @@ hr.solidLine {
 	
 	.projects h2{
 		font-size: 2vw;
+		font-size: 2vh;
 		padding: 0px;
 	}
 	
@@ -281,7 +281,7 @@ hr.solidLine {
 	}
 	
 	.projects img {
-		width: 100%;
+		width: 80%;
 		height: auto;
 	}
 	
@@ -289,41 +289,10 @@ hr.solidLine {
 		display: none;
 	}
 }
-*/
+
 
 /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-/*
-@media screen and (max-width: 400px) {
-  .navbar a {
-	padding: 0px;
-    width: 100%;
-	float: none;
-  }
-  
-  .navbar img {
-	  padding: 0px;
-	  max-height: 10px;
-	  max-width: 10px;
-	  width: auto;
-	  float: none;
-  }
-  
-  .tab {
-		padding: 0px;
-		font-size: 12;
-		-webkit-columns: 2 100px;
-		-moz-columns: 2 100px;
-		columns: 2 100px;
-		-moz-column-fill: auto;
-		column-fill: auto;
-	}
-	
-	.html img{
-		float: center;
-		width: auto;
-		max-width: 250px;
-		height: auto;
-		max-height: 250px;
-	}
+
+@media screen and (max-height: 1200px) {	
+
 }
-*/
