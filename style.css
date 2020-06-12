@@ -3,6 +3,7 @@
 	padding: 0;	
 	font-family: Arial black;
 	box-sizing: border-box;
+	text-decoration: none;
 }
 
 /* Body */
@@ -27,7 +28,7 @@ body, html {
 	float: left;
 	display: block;
 	color: white;
-	font-size: 15px;
+	font-size: 15;
 	padding: 14px 50px;
 	text-align: center;
 	text-decoration: none;
@@ -71,7 +72,7 @@ body, html {
 	font-size: 100px;
 }
 
-.wrapper {
+.container {
 	/* if you want a bg image
 	background-image: url(headerimg.jpg);
 	background-repeat: no-repeat;
@@ -83,7 +84,7 @@ body, html {
 	width: 100%;
 }
 
-.wrapper img {
+.container img {
 	position: absolute;
 	bottom: 30px;
 	left: 50%;
@@ -92,9 +93,10 @@ body, html {
 	width: 50px;
 }
 
-/* Column Container */
-.row {
+.projects {
+	background-position: center;
 	background-size: cover;
+	background-color: white;
 	height: 100%;
 	width: 100%;
 	display: -ms-flexbox; /* IE10 */
@@ -102,28 +104,55 @@ body, html {
 	-ms-flex-wrap: wrap; /* IE10 */
 	flex-wrap: wrap;
 }
-.row h2 {
-	margin-top: 60px;
+
+.projects h1 {
+	padding-left: 20px;
 }
+
+.projects h2 {
+	margin-top: 60px;
+	padding: 20px;
+}
+
+.projects h3 {
+	padding-left: 20px;
+}
+
+.projects img {
+	width: auto;
+	max-height: 450px;
+	max-width: 500px;
+	flex: 0.5;
+	padding: 20px;
+}
+
+.projects p {
+	padding-left: 20px;
+}
+
 
 /* 2 unequal columns beside each other */
 /* Sidebar or left column */
+/*
 .side {
-	-ms-flex: 0.187; /* IE10 */
+	-ms-flex: 0.187;
 	flex: 0.187;
 	background-color: #f1f1f1;
 	padding: 20px;
 }
+*/
 
 /* Main column */
+/*
 .main {	
-	-ms-flex: 0.813; /* IE10 */
+	-ms-flex: 0.813; 
 	flex: 0.813;
 	background-color: white;
 	padding: 20px;
 }
+*/
 
-/* Writing Tab Section */
+/* Tab Sections */
 .tab {
 	background-size: cover;
 	height: 100%;
@@ -131,16 +160,16 @@ body, html {
 }
 
 #HSE img {
-	max-height: 500px;
-	width: auto;
+	height: auto;
+	max-width: 400px;
 }
 #CC img {
-	max-height: 500px;
-	width: auto;
+	height: auto;
+	max-width: 400px;
 }
 #TQP img {
-	max-height: 500px;
-	width: auto;
+	height: auto;
+	max-width: auto;
 }
 
 .writing {
@@ -158,8 +187,8 @@ body, html {
 	height: 100%;
 }
 
-#defaultOpen {
-	margin-top: 70px;
+.writing h2 {
+	margin-top: 60px;
 }
 
 .tab button {
@@ -193,8 +222,8 @@ body, html {
 	height: 100%;
 }
 
-/* Art */
-.art {
+/* Resume */
+.resume {
 	position: relative;
 	top: 50%;
 	left: 50%;
@@ -202,6 +231,10 @@ body, html {
 	font-size: 60px;
 	color: white;
 	text-align: center;
+}
+
+.resume a {
+	color: #ccc;
 }
 
 /* Divider */
@@ -212,15 +245,64 @@ hr.solidLine {
 
 /* Responsive Layout - when the screen is <700px wide, nav links stack on top of each other instead of next to each other */
 @media screen and (max-width: 700px) {
-	.row {
-		flex-direction: column;
+	.navbar a {
+		padding: 2px;
+		width: 100%;
+		font-size: 8;
+		float: none;
 	}
+	
+	.tab {
+		padding: 0px;
+		font-size: 12;
+		-webkit-columns: 2 200px;
+		-moz-columns: 2 200px;
+		columns: 2 200px;
+		-moz-column-fill: auto;
+		column-fill: auto;
+	}
+	
+	.html img{
+		float: center;
+		width: auto;
+		max-width: 400px;
+		height: auto;
+		max-height: 400px;
+	}
+	
 }
 
 /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
 @media screen and (max-width: 400px) {
   .navbar a {
-    float: none;
+	padding: 0px;
     width: 100%;
+	float: none;
   }
+  
+  .navbar img {
+	  padding: 0px;
+	  max-height: 10px;
+	  max-width: 10px;
+	  width: auto;
+	  float: none;
+  }
+  
+  .tab {
+		padding: 0px;
+		font-size: 12;
+		-webkit-columns: 2 100px;
+		-moz-columns: 2 100px;
+		columns: 2 100px;
+		-moz-column-fill: auto;
+		column-fill: auto;
+	}
+	
+	.html img{
+		float: center;
+		width: auto;
+		max-width: 250px;
+		height: auto;
+		max-height: 250px;
+	}
 }

@@ -8,6 +8,6 @@ function scrollNav(){
 		document.getElementById("topNav").style.top = "0";
 	}
 	else {
-		document.getElementById("topNav").style.top = "-80px";
+		document.getElementById("topNav").style.top = "-100px";
 	}
 }
