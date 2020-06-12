@@ -37,9 +37,9 @@
 			<div class="tab">
 				<button class="tablink" onclick="openTab(event, 'A')" id="defaultOpen"><h2>space schooter</h2></button>
 				<button class="tablink" onclick="openTab(event, 'B')"><h2>emergency sensor</h2></button>
-				<button class="tablink" onclick="openTab(event, 'C')"><h2>motorized laser controller</h2></button>
-				<button class="tablink" onclick="openTab(event, 'D')"><h2>reflow soldering oven</h2></button>
-				<button class="tablink" onclick="openTab(event, 'E')"><h2>rc4 decryption</h2></button>
+				<button class="tablink" onclick="openTab(event, 'C')"><h2>gas station simulation</h2></button>
+				<button class="tablink" onclick="openTab(event, 'D')"><h2>motorized laser controller</h2></button>
+				<button class="tablink" onclick="openTab(event, 'E')"><h2>reflow soldering oven</h2></button>
 			</div>
 			
 
@@ -48,26 +48,26 @@
 				<h3>| c# | unity game engine |</h3> 
 				<br>
 				<p>preview:</p>
-				<img src="./images/ss-start.png"/>
+				<img src="./images/ss-start.PNG"/>
 				<img src="./images/ss-game.gif"/>
-				<br><br>
-				<p>arrow keys: move <br>
-				spacebar: shield <br>
-				x: shoot
-				<br><br>
+				<p>description: <br><br>
 				energy bar depletes when player shoots & utilizes shield. <br>
-				regain energy overtime & when player is near the sun.<br>
-				player loses if hit with enemy ship or crashing into a planet w/o shield up.<br><br>
-				2 enemy types</p>
+				regain energy over time & when player is near the sun.<br>
+				player loses if hit by enemies or crashing into a planet without shield up.<br>
+				2 enemy types. <br><br>
+				arrow keys: move <br>
+				spacebar: shield <br>
+				x: shoot</p>
+			
 				<br><br>
-				<p>download: <a href="https://github.com/tommyyeh0505/EnergyGameJam" target="_blank">github</a></p>
+				<p>code: <a href="https://github.com/tommyyeh0505/EnergyGameJam" target="_blank">github</a></p>
 			</div>
 
 			<div id="B" class="tabcontent">
 				<h1>emergency location sensor</h1> 
 				<h3>| c | python | linux | raspberry pi |</h3> 
 				<img src="./images/es-poster.png"/>
-				<img src="./images/graphs.png"/>
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/InIpRuBshVQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				<p>description: <br><br>
 					1. a seismic sensor detects ambient noise from the environment.<br>
 					2. multiple (3+) devices will be placed at site where victims knocks.<br>
@@ -77,8 +77,24 @@
 					the devices will securely communicate using tcp.	
 				</p>
 			</div>
-
+			
 			<div id="C" class="tabcontent">
+				<h1>gas station simulation</h1> 
+				<h3>| c++ | visual studio | </h3> 
+				<img src="./images/gas-overview.PNG"/>
+				<img src="./images/gs.gif"/>
+				<p>description: <br><br>
+				simulation of a gas station.
+				4 pumps & multiple customers filling cars with gas.<br>
+				pseudo-random generation of customer information <br>
+				(ie: payment details, amount of gas, names, etc.)<br><br>
+				mutexes, datapools, thread concurrency.
+				<br><br>
+				code: <a href="https://github.com/sophiekachu/gas-station-simulation" target="_blank">github</a>
+				</p>
+			</div>
+
+			<div id="D" class="tabcontent">
 				<h1>motorized laser controller</h1> 
 				<h3>| c | matlab | altium | solidworks | arduino |</h3> 
 				<img src=""/>
@@ -88,19 +104,9 @@
 				</p>
 			</div>
 			
-			<div id="D" class="tabcontent">
+			<div id="E" class="tabcontent">
 				<h1>reflow soldering oven</h1> 
 				<h3>| c | x86 assembly | python |</h3> 
-				<img src=""/>
-				<img src=""/>
-				<p>description: <br><br>
-				
-				</p>
-			</div>
-			
-			<div id="E" class="tabcontent">
-				<h1>rc4 decryption</h1> 
-				<h3>| system verilog | quartus | fpga board |</h3> 
 				<img src=""/>
 				<img src=""/>
 				<p>description: <br><br>

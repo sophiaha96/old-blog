@@ -120,8 +120,8 @@ body, html {
 
 .projects img {
 	width: auto;
-	max-height: 450px;
-	max-width: 500px;
+	max-height: 500px;
+	max-width: 600px;
 	flex: 0.5;
 	padding: 20px;
 }
@@ -130,6 +130,9 @@ body, html {
 	padding-left: 20px;
 }
 
+.projects iframe {
+	padding: 20px;
+}
 
 /* 2 unequal columns beside each other */
 /* Sidebar or left column */
@@ -244,6 +247,7 @@ hr.solidLine {
 }
 
 /* Responsive Layout - when the screen is <700px wide, nav links stack on top of each other instead of next to each other */
+/*
 @media screen and (max-width: 700px) {
 	.navbar a {
 		padding: 2px;
@@ -271,8 +275,10 @@ hr.solidLine {
 	}
 	
 }
+*/
 
 /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+/*
 @media screen and (max-width: 400px) {
   .navbar a {
 	padding: 0px;
@@ -306,3 +312,4 @@ hr.solidLine {
 		max-height: 250px;
 	}
 }
+*/
