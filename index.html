@@ -17,7 +17,7 @@
 			<a href="#">home</a>
 			<a href="#projects">projects</a>
 			<a href="#resume">resume</a>
-			<a href="#personal blog">personal blog</a>
+			<!--<a href="#personal blog">personal blog</a>-->
 			<a href="https://www.facebook.com/Sophiekachu" class="social" target="_blank"><img src="./images/fb.png"/></a>
 			<a href="https://www.instagram.com/sophiekachu/" class="social" target="_blank"><img src="./images/ig.png"/></a>
 			<a href="https://www.linkedin.com/in/sophia-ha-827210120/" class="social" target="_blank"><img src="./images/ln.png"/></a>
@@ -57,12 +57,13 @@
 				<button class="tablink" onclick="openTab(event, 'C')"><h2>reflow soldering oven</h2></button>
 				<button class="tablink" onclick="openTab(event, 'D')"><h2>motorized laser controller</h2></button>
 				<button class="tablink" onclick="openTab(event, 'E')"><h2>gas station simulation</h2></button>
+				<button class="tablink" onclick="openTab(event, 'F')"><h2>more coming soon...</h2></button>
 			</div>
 			
 
 			<div id="A" class="tabcontent">
 				<h1>space shooter - bc game jam 2019</h1> 
-				<h3>| c# | unity game engine |</h3> 
+				<h3>| c# | unity game engine | github |</h3> 
 				<br>
 				<p>preview:</p>
 				<img src="./images/ss-start.PNG"/>
@@ -87,7 +88,7 @@
 				<iframe width="560" height="315" src="https://www.youtube.com/embed/InIpRuBshVQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				<p>description: <br><br>
 					1. a seismic sensor detects ambient noise from the environment.<br>
-					2. multiple (3+) devices will be placed at site where victims knocks.<br>
+					2. multiple devices will be placed at the disaster site where the victim will begin knocking against the rubble.<br>
 					3. using digital signal processing (dsp), the desired signal is isolated from the noise.<br>
 					4. this data is used in conjunction with the triagulation algorithm in order to locate the victim.
 					<br><br>
@@ -97,10 +98,10 @@
 
 			<div id="C" class="tabcontent">
 				<h1>reflow soldering oven</h1> 
-				<h3>| c | 8051 assembly | python |</h3> 
+				<h3>| c | python | 8051 assembly |</h3> 
 				<img src="./images/reflow.jpeg"/>
 				<p>description: <br><br>
-				designed & programmed (using the hdl, 8051 assembly) a reflow oven controller in order to solder/fasten surface mount technology (smt) components onto a pcb by following a specific temperature profile. <br>
+				designed & programmed a reflow oven controller in order to solder/fasten surface mount technology (smt) components onto a pcb by following a specific temperature profile. <br>
 				pulse wave modulation (pwm) was used to control & regulate these exact temperature changes. <br>
 				functionalities also included an lcd user interface that displayed temperature change, time elaspsed, and current status of the reflow process, as well as a fail stop.
 				</p>
@@ -110,8 +111,12 @@
 				<h1>motorized laser controller</h1> 
 				<h3>| c | matlab | altium | solidworks | arduino |</h3> 
 				<img src="./images/laser.jpg"/>
-				<img src="./images/laser-pcb.png"/>
+				<img src="./images/laser-pcb.PNG"/>
 				<p>description: <br><br>
+				built and programmed pid controllers for self-made, mechanically commutated dc motors that are able to finely draw shapes using a laser.<br>
+				designed pcb and miscallenous parts with cad software.<br> 
+				modelled inverse kinematics and output data to fine-tune accuracy.
+				<br><br>
 				presentation slides: <a href="https://drive.google.com/file/d/1jljDvgfhqwLOS_sd7ohFNEMV4r8tQoLo/view?usp=sharing">pdf</a>
 				</p>
 			</div>
@@ -129,6 +134,12 @@
 				mutexes, datapools, thread concurrency.
 				<br><br>
 				code: <a href="https://github.com/sophiekachu/gas-station-simulation" target="_blank">github</a>
+				</p>
+			</div>
+			
+			<div id="F" class="tabcontent">
+				<p>
+				
 				</p>
 			</div>
 		</div>
