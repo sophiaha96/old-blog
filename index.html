@@ -45,7 +45,7 @@
 				<h1>sophia ha</h1>
 				<p>electrical engineer</p>
 			</div>
-			<a href="#projects" class="down"><img src="./images/down-arrow.png"/></a>
+			<a href="#projects"><img src="./images/down-arrow.png"/></a>
 		</div>
 		
 		<!-- PROJECTS -->
@@ -54,9 +54,9 @@
 			<div class="tab">
 				<button class="tablink" onclick="openTab(event, 'A')" id="defaultOpen"><h2>space schooter</h2></button>
 				<button class="tablink" onclick="openTab(event, 'B')"><h2>emergency sensor</h2></button>
-				<button class="tablink" onclick="openTab(event, 'C')"><h2>gas station simulation</h2></button>
+				<button class="tablink" onclick="openTab(event, 'C')"><h2>reflow soldering oven</h2></button>
 				<button class="tablink" onclick="openTab(event, 'D')"><h2>motorized laser controller</h2></button>
-				<button class="tablink" onclick="openTab(event, 'E')"><h2>reflow soldering oven</h2></button>
+				<button class="tablink" onclick="openTab(event, 'E')"><h2>gas station simulation</h2></button>
 			</div>
 			
 
@@ -94,11 +94,32 @@
 					the devices will securely communicate using tcp.	
 				</p>
 			</div>
-			
+
 			<div id="C" class="tabcontent">
+				<h1>reflow soldering oven</h1> 
+				<h3>| c | 8051 assembly | python |</h3> 
+				<img src="./images/reflow.jpeg"/>
+				<p>description: <br><br>
+				designed & programmed (using the hdl, 8051 assembly) a reflow oven controller in order to solder/fasten surface mount technology (smt) components onto a pcb by following a specific temperature profile. <br>
+				pulse wave modulation (pwm) was used to control & regulate these exact temperature changes. <br>
+				functionalities also included an lcd user interface that displayed temperature change, time elaspsed, and current status of the reflow process, as well as a fail stop.
+				</p>
+			</div>
+			
+			<div id="D" class="tabcontent">
+				<h1>motorized laser controller</h1> 
+				<h3>| c | matlab | altium | solidworks | arduino |</h3> 
+				<img src="./images/laser.jpg"/>
+				<img src="./images/laser-pcb.png"/>
+				<p>description: <br><br>
+				presentation slides: <a href="https://drive.google.com/file/d/1jljDvgfhqwLOS_sd7ohFNEMV4r8tQoLo/view?usp=sharing">pdf</a>
+				</p>
+			</div>
+			
+			<div id="E" class="tabcontent">
 				<h1>gas station simulation</h1> 
 				<h3>| c++ | visual studio | </h3> 
-				<img src="./images/gas-overview.PNG"/>
+				<!--<img src="./images/gas-overview.PNG"/>-->
 				<img src="./images/gs.gif"/>
 				<p>description: <br><br>
 				simulation of a gas station.
@@ -110,33 +131,13 @@
 				code: <a href="https://github.com/sophiekachu/gas-station-simulation" target="_blank">github</a>
 				</p>
 			</div>
-
-			<div id="D" class="tabcontent">
-				<h1>motorized laser controller</h1> 
-				<h3>| c | matlab | altium | solidworks | arduino |</h3> 
-				<img src=""/>
-				<img src=""/>
-				<p>description: <br><br>
-				
-				</p>
-			</div>
-			
-			<div id="E" class="tabcontent">
-				<h1>reflow soldering oven</h1> 
-				<h3>| c | x86 assembly | python |</h3> 
-				<img src=""/>
-				<img src=""/>
-				<p>description: <br><br>
-				
-				</p>
-			</div>
 		</div>
 
 		<!-- RESUME -->
 		<div class="container">
 			<div class="resume" id="resume">
 				<h2>resume</h2>
-				<a href="https://drive.google.com/file/d/1-oJM4mgk7gNtNSlNQv1hHdv7lchm5Kcr/view?usp=sharing" target="_blank">pdf</a>
+				<a href="https://drive.google.com/file/d/1uKZW8DLZ5srcaIXo8FNG1dwzYu33mdsb/view?usp=sharing" target="_blank">pdf</a>
 			</div>
 		</div>
 		

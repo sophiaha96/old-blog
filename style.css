@@ -74,24 +74,20 @@ body, html {
 	text-align: center;
 }
 
-.home img {
-	position: center;
-}
-
 .home h1 {
 	font-size: 100px;
 }
 
 .container {
-	/* if you want a bg image
-	background-image: url();
+	/*
+	background-image: url(images/bg.jpg);
 	*/
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-color: black;
 	background-size: cover;
 	max-width: 100%;
-	height: 100%;
+	height: 120%;
 	width: auto;
 	z-index: 0;
 }
@@ -107,12 +103,21 @@ body, html {
 }
 
 .projects {
+	/*
 	background-position: center center;
 	background-size: cover;
 	background-color: white;
 	height: 100%;
 	width: 100%;
 	z-index: 400;
+	*/
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-color: white;
+	background-size: cover;
+	max-width: 100%;
+	height: 100%;
+	width: auto;
 /*
 	display: -ms-flexbox;
 	display: flex;
@@ -260,9 +265,9 @@ hr.solidLine {
 		display: block;
 		color: white;
 		text-decoration: none;
-		font-size: 2vw;
+		font-size: 4vw;
 		align-items: center;
-		padding: 2vw 2vh;
+		padding: 3vw 3vh;
 	}
 	
 	#links {
@@ -296,24 +301,26 @@ hr.solidLine {
 		background-color: #ddd;
 		filter: invert(0);
 	}
-	
+	/*
 	.projects h1{
 		font-size: 4vw;
 		float: center;
 	}
-	
+	*/
 	.projects h2{
-		font-size: 1.5vw;
+		font-size: 2vw;
 		padding: 0px;
 	}
 	
+	/*
 	.projects h3 {
 		font-size: 2vw;
 		float: center;
 	}
+	*/
 	
 	.projects img {
-		width: 100%;
+		width: 120%;
 		height: auto;
 	}
 	
