@@ -22,6 +22,7 @@ body, html {
 	top: -80px;
 	width: 100%;
 	transition: top 0.3s;
+	z-index: 500;
 }
 
 /* Nav Bar Links */
@@ -47,15 +48,19 @@ body, html {
 	filter: invert(1);
 }
 
-/* Fricken LN's logo isn't centered efffff */
 .navbar a.social:hover{
 	background-color: #ddd;
 	filter: invert(0);
 }
 
 .navbar img {
+	display: block;
 	height: auto;
 	width: 30px;
+}
+
+.m-navbar {
+	display: none;
 }
 
 /* Header & Title */
@@ -69,38 +74,45 @@ body, html {
 	text-align: center;
 }
 
+.home img {
+	position: center;
+}
+
 .home h1 {
 	font-size: 100px;
 }
 
 .container {
 	/* if you want a bg image
-	background-image: url(headerimg.jpg);
-	background-repeat: no-repeat;
+	background-image: url();
 	*/
-	background-position: center;
+	background-position: center center;
+	background-repeat: no-repeat;
 	background-color: black;
 	background-size: cover;
 	max-width: 100%;
 	height: 100%;
 	width: auto;
+	z-index: 0;
 }
 
 .container img {
 	position: absolute;
 	bottom: 30px;
 	left: 50%;
+	margin-left: -25px;
 	filter: invert(1);
 	height: 50px;
 	width: 50px;
 }
 
 .projects {
-	background-position: center;
+	background-position: center center;
 	background-size: cover;
 	background-color: white;
 	height: 100%;
 	width: 100%;
+	z-index: 400;
 /*
 	display: -ms-flexbox;
 	display: flex;
@@ -161,41 +173,13 @@ body, html {
 
 /* Tab Sections */
 .tab {
+	background-color: #f1f1f1;
 	background-size: cover;
-	height: auto;
-	width: 100%;
-}
-
-#HSE img {
-	height: auto;
-	max-width: 400px;
-}
-#CC img {
-	height: auto;
-	max-width: 400px;
-}
-#TQP img {
-	height: auto;
-	max-width: auto;
-}
-
-.writing {
-	background-size: cover;
-	height: 100%;
-	width: 100%;
-}
-
-/* Tabs */
-.tab {
 	float: left;
 	/*border: 1px solid #ccc;*/
-	background-color: #f1f1f1;
 	width: 20%;
 	height: 100%;
-}
-
-.writing h2 {
-	margin-top: 60px;
+	z-index: 400;
 }
 
 .tab button {
@@ -203,6 +187,7 @@ body, html {
 	background-color: inherit;
 	color: black;
 	padding: 22px 16px;
+	height: 20%;
 	width: 100%;
 	border: none;
 	outline: none;
@@ -227,6 +212,8 @@ body, html {
 	padding: 0px 12px;
 	width: 80%;
 	height: 100%;
+	z-index: 400;
+	overflow-y: auto;
 }
 
 /* Resume */
@@ -238,7 +225,7 @@ body, html {
 	font-size: 60px;
 	color: white;
 	text-align: center;
-	
+	z-index: 0;
 }
 
 
@@ -254,16 +241,60 @@ hr.solidLine {
 
 /* Responsive Layout - when the screen is <1000px wide, nav links stack on top of each other instead of next to each other */
 @media screen and (max-width: 1000px) {	
-	
-	.navbar a {
-		font-size: 2vw;
-		float: left;
+	.navbar {
+		display: none;
 	}
 	
-	.navbar img {
-		max-width: 50%;
-		height: auto;
-		float: left;
+	.m-navbar {
+		display: block;
+		overflow: hidden;
+		background-color: #333;
+		position: fixed;
+		width: 100%;
+		text-align: center;
+		color: white;
+		z-index: 500;
+	}
+	
+	#drop {
+		display: block;
+		color: white;
+		text-decoration: none;
+		font-size: 2vw;
+		align-items: center;
+		padding: 2vw 2vh;
+	}
+	
+	#links {
+		display: none;
+	}
+	
+	.m-navbar a {
+		display: block;
+		color: white;
+		text-decoration: none;
+		font-size: 2vw;
+		padding: 2vh;
+	}
+
+	.m-navbar a:hover {
+		background-color: #ddd;
+		color: black;
+	}
+
+	.m-navbar img{
+		margin-left: auto;
+		margin-right: auto;
+		filter: invert(1);
+		display: block;
+		width: 4vw;
+		max-width: 100%;
+		max-height: auto;
+	}
+
+	.m-navbar img:hover{
+		background-color: #ddd;
+		filter: invert(0);
 	}
 	
 	.projects h1{
@@ -281,10 +312,6 @@ hr.solidLine {
 		float: center;
 	}
 	
-	.projects p {
-		font-size: 1vh;
-	}
-	
 	.projects img {
 		width: 100%;
 		height: auto;
@@ -298,6 +325,8 @@ hr.solidLine {
 
 /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
 
-@media screen and (max-height: 1200px) {	
-
+@media screen and (max-height: 750px) {	
+	.projects {
+		height: 170%;
+	}
 }
