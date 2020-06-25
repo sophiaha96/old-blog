@@ -64,19 +64,18 @@
 				<h1>Space Shooter - BC Game Jam 2019</h1> 
 				<h3>| C# | Unity Game Engine | Visual Studio | GitHub |</h3> 
 				<br>
-				<p>Preview:</p>
+				<h3>Preview:</h3>
 				<img src="./images/ss-start.PNG"/>
 				<img src="./images/ss-game.gif"/>
-				<p>Description: <br><br>
-				Energy bar depletes when player shoots & utilizes shield. <br>
+				<h3>Description:</h3><br>
+				<p>Energy bar depletes when player shoots & utilizes shield. <br>
 				Regain energy over time & when player is near the sun.<br>
 				Player loses if hit by enemies or crashing into a planet without shield up.<br>
 				2 enemy types. <br><br>
 				Arrow Keys: Move <br>
 				Spacebar: Shield <br>
-				X: Shoot</p>
+				X: Shoot</p><br>
 			
-				<br><br>
 				<p>Code: <a href="https://github.com/tommyyeh0505/EnergyGameJam" target="_blank">GitHub</a></p>
 			</div>
 
@@ -85,24 +84,51 @@
 				<h3>| C | Python | Linux | Raspberry Pi | SolidWorks |</h3> 
 				<img src="./images/es-poster.png"/>
 				<iframe width="560" height="315" src="https://www.youtube.com/embed/InIpRuBshVQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				<p>Description: <br><br>
-					1. A seismic sensor first detects ambient noise from the environment.<br>
-					2. Multiple devices will be placed at the disaster site where the victim will begin knocking against the rubble.<br>
-					3. Using digital signal processing (DSP), the desired signal is isolated from the noise.<br>
-					4. Each device will then transfer this information to the host module using TCP communication. <br>
-					5. This data is used in conjunction with our patented triagulation algorithm in order to locate the victim.
+				<h3>Description:</h3><br>
+				<p>1. A seismic sensor first detects ambient noise from the environment.<br>
+				2. Multiple devices will be placed at the disaster site where the victim will begin knocking against the rubble.<br>
+				3. Using digital signal processing (DSP), the desired signal is isolated from the noise.<br>
+				4. Each device will then transfer this information to the host module using TCP communication. <br>
+				5. This data is used in conjunction with our patented triagulation algorithm in order to locate the victim.
 				</p>
 			</div>
 
 			<div id="C" class="tabcontent">
 				<h1>Reflow Soldering Oven</h1> 
 				<h3>| C | Python | 8051 Assembly |</h3> 
+				<img src="./images/r-board.PNG"/>
 				<img src="./images/reflow.jpeg"/>
-				<p>Description: <br><br>
-				Designed & programmed a reflow oven controller in order to solder/fasten surface mount technology (SMT) components onto a PCB by following a specific temperature profile. <br>
-				Sensors detected the temperature inside the reflow oven, which would then be regulated using pulse wave modulation (PWM).<br>
-				Functionalities also included an LCD user interface (UI) that displayed temperature change, time elaspsed, and current status of the reflow process, as well as a fail stop.
-				</p>
+				<h3>Description: </h3><br>
+				<p>Designed & programmed a reflow oven controller in order to solder/fasten surface mount technology (SMT) components onto a PCB by following a specific temperature profile. A User Interface (UI) was included in order to keep track of time elapsed and phase of the finite state machine's (FSM) reflow process.</p> <br><br>
+				
+				<h3>Specifications:</h3><br>
+				<p><ul>
+					<li>Atmel AT89LP52 Microcontroller</li>
+					<li>MCP3008 ADC</li>
+					<li>SD1602H LCD Display</li>
+					<li>2N3904 NPN Transistor</li>
+					<li>OP07CP OP AMP Chip</li>
+					<li>LMC7660IN Switched Capacitor Voltage Converter</li>
+					<li>22.1184MHz Crystal Oscillator</li>
+					<li>Thermocouple</li>
+					<li>LM335 Temperature Sensor</li>
+					<li>330Ω, 2kΩ, 22kΩ Resistors</li>
+					<li>0.1μF, 10μF Capacitors</li>
+					<li>Push Buttons</li>					
+				</ul></p><br><br>
+				
+				<h3>Design:</h3><br>
+					<h4>OP AMP Calculation:</h4>
+					<p>Set the theoretical second resistor's value to 200Ω, the temperature constraints to 10-400°C with an amplified voltage range of 0.1-0.4V<br>
+					Then with a signal generator, used a measured voltage of 0.4mV for a temperature of 10°C. This was then used to calculate the OP AMP's amplification factor (0.1V/0.4mV = 250V/V). This value could then be used to solve for the first resistor's value by relating the first and second resistor values, which gives us a result of R1 = 24.3kΩ</p><br>
+				
+					<h4>Operation:</h4>
+					<p>To be able to precisely regulate the temperatures inside the reflow oven, a solid-state relay (SSR) was used. This was controlled using pulse wave modulation (PWM) written in Assembly 8051. The PWM function executed every half-second through an interrupt service routine (ISR)<br>
+				
+					Thermocouples detected the temperature inside the reflow oven, which ranged from 25-235°C. This information is encoded via voltage readings and had to be amplified (using the OP AMP circuit) before being sent into the microncontroller.<br>
+					
+					Functionalities also included an LCD user interface (UI) that displayed temperature change, time elaspsed, and current status of the reflow process, as well as a fail stop. Additionally, wrote a Python script which allows visualization of graphed temperature.</p>
+					<br><br>
 			</div>
 			
 			<div id="D" class="tabcontent">
@@ -110,8 +136,8 @@
 				<h3>| C | MATLAB | Simulink | Altium | SolidWorks | Arduino |</h3> 
 				<img src="./images/laser.jpg"/>
 				<img src="./images/laser-pcb.PNG"/>
-				<p>Description: <br><br>
-				Built and programmed PID controllers for self-made, mechanically commutated DC motors that were able to finely draw shapes using a laser.<br>
+				<h3>Description:</h3><br>
+				<p>Built and programmed PID controllers for self-made, mechanically commutated DC motors that were able to finely draw shapes using a laser.<br>
 				Designed PCB and encoder wheel using Altium. Designed CAD parts using SolidWorks.<br> 
 				This encoder wheel was used to detect the position of the motor which consequently was used to program a honing mechanism and controller.<br>
 				Modelled inverse kinematics in Simulink and analyzed a large amount of output data using Excel Spreadsheet in order to fine-tune accuracy.
@@ -125,8 +151,8 @@
 				<h3>| C++ | Visual Studio | GitHub |</h3> 
 				<!--<img src="./images/gas-overview.PNG"/>-->
 				<img src="./images/gs.gif"/>
-				<p>Description: <br><br>
-				Simulated a gas station with 4 pumps & multiple customers filling cars as well as making payments.<br>
+				<h3>Description:</h3><br>
+				<p>Simulated a gas station with 4 pumps & multiple customers filling cars as well as making payments.<br>
 				Pseudo-random generation of customer information (ie: payment details, amount of gas, names, etc.)<br><br>
 				Included mutexes, datapools, and thread concurrency.
 				<br><br>

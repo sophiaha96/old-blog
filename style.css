@@ -87,7 +87,7 @@ body, html {
 	background-color: black;
 	background-size: cover;
 	max-width: 100%;
-	height: 120%;
+	height: 110%;
 	width: auto;
 	z-index: 0;
 }
@@ -113,11 +113,12 @@ body, html {
 	*/
 	background-position: center center;
 	background-repeat: no-repeat;
-	background-color: white;
+	background-color: #222;
 	background-size: cover;
 	max-width: 100%;
 	height: 100%;
 	width: auto;
+	color: white;
 /*
 	display: -ms-flexbox;
 	display: flex;
@@ -139,16 +140,26 @@ body, html {
 	padding-left: 20px;
 }
 
+.projects h4 {
+	padding-left: 20px;
+}
+
+.projects p {
+	padding-left: 20px;
+	font-family: Arial;
+}
+
+.projects li {
+	margin-left: 40px;
+	font-family: Arial;
+}
+
 .projects img {
 	max-width: 40%;
 	max-height: 50%;
 	height: auto;
 	/*flex: 0.5;*/
 	padding: 20px;
-}
-
-.projects p {
-	padding-left: 20px;
 }
 
 .projects iframe {
@@ -183,20 +194,19 @@ body, html {
 	float: left;
 	/*border: 1px solid #ccc;*/
 	width: 20%;
-	height: 100%;
+	height: 80%;
 	z-index: 400;
 }
 
 .tab button {
-	display: block;
+	display: inline-block;
 	background-color: inherit;
 	color: black;
-	padding: 22px 16px;
-	height: 15%;
+	padding: 0px 10px;
+	height: 20.8%;
 	width: 100%;
 	border: none;
 	outline: none;
-	text-align: left;
 	cursor: pointer;
 	transition: 0.3s;
 }
@@ -214,9 +224,9 @@ body, html {
 	float: left;
 	/*border: 1px solid #ccc;*/
 	border-left: none;
-	padding: 0px 12px;
+	padding: 0px 80px;
 	width: 80%;
-	height: 100%;
+	height: 80%;
 	z-index: 400;
 	overflow-y: auto;
 }
@@ -301,23 +311,21 @@ hr.solidLine {
 		background-color: #ddd;
 		filter: invert(0);
 	}
-	/*
+
 	.projects h1{
-		font-size: 4vw;
-		float: center;
+		font-size: 3vw;
+		margin-bottom: 20px;
+		text-align: center;
 	}
-	*/
+	
 	.projects h2{
 		font-size: 2vw;
 		padding: 0px;
 	}
 	
-	/*
 	.projects h3 {
 		font-size: 2vw;
-		float: center;
 	}
-	*/
 	
 	.projects img {
 		width: 120%;
