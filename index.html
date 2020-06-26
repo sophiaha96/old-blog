@@ -14,10 +14,10 @@
 	<body>			
 		<!-- DESKTOP NAV BAR -->
 		<div class="navbar" id="topNav">
-			<a href="#">HOME</a>
-			<a href="#projects">PROJECTS</a>
-			<a href="#resume">RESUME</a>
-			<!--<a href="#personal blog">personal blog</a>-->
+			<a href="#">Home</a>
+			<a href="#projects">Project</a>
+			<a href="#resume">Resume</a>
+			<a href="https://github.com/sophiaha96/sophiaha96.github.io" target="_blank">Source</a>
 			<a href="https://www.facebook.com/Sophiekachu" class="social" target="_blank"><img src="./images/fb.png"/></a>
 			<a href="https://www.instagram.com/sophiekachu/" class="social" target="_blank"><img src="./images/ig.png"/></a>
 			<a href="https://www.linkedin.com/in/sophia-ha-827210120/" class="social" target="_blank"><img src="./images/ln.png"/></a>
@@ -51,53 +51,84 @@
 		<div class="projects" id="projects">
 			<!-- TABS -->
 			<div class="tab">
-				<button class="tablink" onclick="openTab(event, 'A')" id="defaultOpen"><h2>Space Shooter</h2></button>
-				<button class="tablink" onclick="openTab(event, 'B')"><h2>Emergency Sensor</h2></button>
-				<button class="tablink" onclick="openTab(event, 'C')"><h2>Reflow Soldering Oven</h2></button>
+				<button class="tablink" onclick="openTab(event, 'A')" id="defaultOpen"><h2>Emergency Sensor</h2></button>
+				<button class="tablink" onclick="openTab(event, 'B')"><h2>Reflow Soldering Oven</h2></button>
+				<button class="tablink" onclick="openTab(event, 'C')"><h2>Space Shooter</h2></button>
 				<button class="tablink" onclick="openTab(event, 'D')"><h2>Motorized Laser Controller</h2></button>
 				<button class="tablink" onclick="openTab(event, 'E')"><h2>Gas Station Simulation</h2></button>
 				<button class="tablink" onclick="openTab(event, 'F')"><h2>More Coming Soon...</h2></button>
 			</div>
-			
 
 			<div id="A" class="tabcontent">
-				<h1>Space Shooter - BC Game Jam 2019</h1> 
-				<h3>| C# | Unity Game Engine | Visual Studio | GitHub |</h3> 
-				<br>
-				<h3>Preview:</h3>
-				<img src="./images/ss-start.PNG"/>
-				<img src="./images/ss-game.gif"/>
-				<h3>Description:</h3><br>
-				<p>Energy bar depletes when player shoots & utilizes shield. <br>
-				Regain energy over time & when player is near the sun.<br>
-				Player loses if hit by enemies or crashing into a planet without shield up.<br>
-				2 enemy types. <br><br>
-				Arrow Keys: Move <br>
-				Spacebar: Shield <br>
-				X: Shoot</p><br>
-			
-				<p>Code: <a href="https://github.com/tommyyeh0505/EnergyGameJam" target="_blank">GitHub</a></p>
+				<h1>Emergency Location Sensor</h1> 
+				<h3>| C | Python | Linux | Raspberry Pi | SolidWorks |</h3><br>
+				
+				<h3>Proposal:</h3><br>
+				<p>With natural and man-made disasters so globally prevalent, there is great need for advanced search and rescue technologies. However, the existing life-detecting equipment suffers from its outdated design (over two decades old). The proposed proof-of-concept has automated this process — Including a microprocessor with digital signal processing (DSP) properties, sensors with micro-electro-mechanical systems (MEMS) technology, triangulation algorithm, and wireless communication.
+				</p><br><br>
+				
+				<img src="./images/s-0.PNG"/><br>
+				<h5>Figure 1: System Overview</h5><br>
+				
+				<h3>Design:</h3><br>
+				<h4>Sensor:</h4>
+				<p>In order to build an emergency location sensor which detects a seismic signal of a victim buried within debris, the choice of sensor is critical. The sensor must be sensitive enough to detect a knock through thick layers of building materials. It must output the seismic data with a fast enough speed so that we can calculate the location of a victim from the time in which the signal arrives. Also, it should include a built-in anti-aliasing filter to avoid false identification.<br><br>
+				
+				For sensors, sensitivity refers to how the output changes with the measured data, and in this case, the acceleration from the victim’s seismic signal. Appropriately, it is measured as a function of a ‘g’, the constant acceleration due to gravity of Earth. The seismic sensor chosen was capable of recognizing seismic signal that is greater than 9.81ms^(-2) / 16384 = 0.0005988 ms^(-2) <br><br>
+				
+				Output data rate (ODR) refers to how often a sensor refreshes its output value.Higher ODR theoretically allows us to locate the victim with more accuracy. It also means higher bandwidth of operation. However, a high ODR has its drawbacks, namely increased internal noise and power consumption. The sensor used has an ODR of 12,800 Hz which provides a good compromise between the aforementioned factors.
+				</p><br><br>
+				
+				<h4>Microcontroller:</h4>
+				<p>The Raspberry Pi 3B+ was chosen to test this proof-of-concept, because of its adequate clock speed of 1.4GHz, ample storage of 16GB, and I2C support.</p><br><br>
+				
+				<h4>Signal Profile:</h4>
+				<p>A signal, whether it is a person knocking, or metal striking concrete, has a profile which can be characterized mainly by its center frequency. Different combinations of propagation mediums and materials of the signal source produce different signal profiles. By distinguishing between these different profiles, we can infer the properties of incoming signals. This is the core of the triangulation algorithm. <br><br>
+				
+				The team travelled to an urban search and rescue (USAR) training site to obtain realistic seismic samples in a simulated disaster environment. Each test was repeated 5 times and the average peak frequency and the standard deviation was calculated.
+				</p><br>
+				
+				<img src="./images/s-1.PNG"/><br>
+				<h5>Figure 1: USAR Training Site</h5><br>
+				
+				<h3>Analysis:</h3><br>
+				<h4>Digital Signal Processing (DSP):</h4>
+				<p>Fast Fourier Transform (FFT) is used to obtain the frequency components of the signals from the accelerometer. The distribution of the frequency components is the frequency profile. <br> 
+				After further calculations, the Nyquist frequency tells us that we need to sample at least twice the frequency of our signal. Signals with frequencies above the Nyquist frequency will be aliased, as in they will appear as the wrong frequency. However, there is also a built-in, double-pole, analog, anti-aliasing filter in the sensor. We also took into account the trade-off of time-resolution and frequency-resolution (the more accurate your measurement is in the frequency domain, the less accurate you can be in the time domain).<br>
+				Signal-to-noise ratio is a ratio between the power of the desired signal and the power of the noise. This ratio is important as optimizing our system is based around correctly identifying victims as SNR gets closer to 1. An SNR of 1 means that the signal is indistinguishable from the noise.
+				</p><br><br>
+				
+				<h4>Filtering:</h4>
+				<p>After sampling and performing FFT, we are left with raw frequency data, which has a mix of our desired signal and noise. To obtain a clean signal for triangulation, we need to remove the noise from the desired signal. This can be achieved by implementing digital filters which can be readily done through the Raspberry Pi.
+				</p><br><br>
+				
+				<h4>Noise Cancellation:</h4>
+				<p>The core idea behind noise cancellation is the assumption that peaks in the noise frequency spectrum will be present during the signal acquisition, and must be cancelled. This means that only the peaks which have newly appeared during the signal acquisition phase, will be regarded as a potential signal of life. The FFT of the time domain noise is taken, converting noise data from the time domain to the frequency domain. The FFT function outputs an array that contains the frequency spectrum information. This array is passed to another function that determines the mean and the standard deviation. Depending on whether the device is present in a low or high noise environment, n amounts standard deviations (where n is a real number) above the mean will be used as a noise threshold respectively, cancelling all the different noise frequencies detected</p><br><br>
+				
+				<h3>Other Implementations:</h3><br>
+				<h4>Transmission Control Protocol (TCP):</h4>
+				<p>Coded in C. TCP was chosen, because it is optimized to be accurate and reliable. All bytes sent are guaranteed to be received, re-ordered in its original form, and will retransmit if any packets of data are lost, unlike many other network communication protocols.<br><br>
+				However, the system is limited in how much data is able to be transferred in a short amount of time. So, the client was recommended to research mesh-network type of wireless communication.
+				</p><br><br>
+				
+				<h4>Triangulation:</h4>
+				<p>Designed an algorithm which was translated into a coordinate system based on the sensor's reference point (can be manually set). Python was used to graph the victim's location/general vicinity.</p><br><br>
+				
+				<h4>Miscellanous Parts:</h4>
+				<p>Some parts of the casing were designed using CAD software, SolidWorks, which were then 3D printed.</p>
+
+				<!--
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/InIpRuBshVQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				-->
 			</div>
 
 			<div id="B" class="tabcontent">
-				<h1>Emergency Location Sensor</h1> 
-				<h3>| C | Python | Linux | Raspberry Pi | SolidWorks |</h3> 
-				<img src="./images/es-poster.png"/>
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/InIpRuBshVQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				<h3>Description:</h3><br>
-				<p>1. A seismic sensor first detects ambient noise from the environment.<br>
-				2. Multiple devices will be placed at the disaster site where the victim will begin knocking against the rubble.<br>
-				3. Using digital signal processing (DSP), the desired signal is isolated from the noise.<br>
-				4. Each device will then transfer this information to the host module using TCP communication. <br>
-				5. This data is used in conjunction with our patented triagulation algorithm in order to locate the victim.
-				</p>
-			</div>
-
-			<div id="C" class="tabcontent">
 				<h1>Reflow Soldering Oven</h1> 
 				<h3>| C | Python | 8051 Assembly |</h3> 
+				<br>
 				<img src="./images/r-board.PNG"/>
-				<img src="./images/reflow.jpeg"/>
+				<h5>Figure 1: System Overview of Hardware</h5><br><br>
+				
 				<h3>Description: </h3><br>
 				<p>Designed & programmed a reflow oven controller in order to solder/fasten surface mount technology (SMT) components onto a PCB by following a specific temperature profile. A User Interface (UI) was included in order to keep track of time elapsed and phase of the finite state machine's (FSM) reflow process.</p> <br><br>
 				
@@ -127,15 +158,43 @@
 				
 					Thermocouples detected the temperature inside the reflow oven, which ranged from 25-235°C. This information is encoded via voltage readings and had to be amplified (using the OP AMP circuit) before being sent into the microncontroller.<br>
 					
-					Functionalities also included an LCD user interface (UI) that displayed temperature change, time elaspsed, and current status of the reflow process, as well as a fail stop. Additionally, wrote a Python script which allows visualization of graphed temperature.</p>
-					<br><br>
+					Functionalities also included an LCD user interface (UI) that displayed temperature change, time elaspsed, and current status of the reflow process, as well as a fail stop. Additionally, a Python script was written in order to allow further graphed visualization of the temperature changes.</p><br><br>
+					
+					<img src="./images/reflow.jpeg"/>
+					<h5>Figure 2: Soldered F38x Board After Reflow Process</h5>
+			</div>
+			
+			<div id="C" class="tabcontent">
+				<h1>Space Shooter</h1> 
+				<h3>| C# | Unity Game Engine | Visual Studio | GitHub |</h3><br>
+				
+				<img src="./images/ss-game.gif"/><br>
+				<h5>Figure 1: Gameplay Preview</h5>
+				<br>
+
+				<h3>Description:</h3><br>
+				<p>Energy bar depletes when player shoots and utilizes shield. <br>
+				Regain energy over time and when player is near the sun. There are different planet types with gravity physics employed.<br>
+				Player loses if hit by enemies or crashing into a planet without shield up.<br>
+				2 enemy AI types. <br><br>
+				Arrow Keys: Move <br>
+				Spacebar: Shield <br>
+				X: Shoot</p><br>
+			
+				<p>Code: <a href="https://github.com/tommyyeh0505/EnergyGameJam" target="_blank">GitHub</a><br>Done for BC Game Jam 2019</p><br>
+				
+				<img src="./images/ss-start.PNG"/><br>
+				<h5>Figure 2: Main Screen</h5> <br>
+				
 			</div>
 			
 			<div id="D" class="tabcontent">
 				<h1>Motorized Laser Controller</h1> 
-				<h3>| C | MATLAB | Simulink | Altium | SolidWorks | Arduino |</h3> 
-				<img src="./images/laser.jpg"/>
-				<img src="./images/laser-pcb.PNG"/>
+				<h3>| C | MATLAB | Simulink | Altium | SolidWorks | Arduino |</h3><br>
+				
+				<img src="./images/laser.jpg"/><br>
+				<h5>Figure 1: Motorized Laser Controller</h5><br>
+				
 				<h3>Description:</h3><br>
 				<p>Built and programmed PID controllers for self-made, mechanically commutated DC motors that were able to finely draw shapes using a laser.<br>
 				Designed PCB and encoder wheel using Altium. Designed CAD parts using SolidWorks.<br> 
@@ -143,14 +202,23 @@
 				Modelled inverse kinematics in Simulink and analyzed a large amount of output data using Excel Spreadsheet in order to fine-tune accuracy.
 				<br><br>
 				Presentation Slides: <a href="https://drive.google.com/file/d/1jljDvgfhqwLOS_sd7ohFNEMV4r8tQoLo/view?usp=sharing" target="_blank">pdf</a>
-				</p>
+				</p><br>
+				
+				<img src="./images/laser-pcb.PNG"/>
+				<h5>Figure 2: PCB Design</h5><br>
+				
+				<img src="./images/pcb.PNG"/>
+				<h5>Figure 3: Printed PCB and Encoder Wheel</h5>
 			</div>
 			
 			<div id="E" class="tabcontent">
 				<h1>Gas Station Simulation</h1> 
-				<h3>| C++ | Visual Studio | GitHub |</h3> 
+				<h3>| C++ | Visual Studio | GitHub |</h3> <br>
+				
 				<!--<img src="./images/gas-overview.PNG"/>-->
 				<img src="./images/gs.gif"/>
+				<h5>Figure 1: Execution of Gas Station Simulation</h5><br>
+				
 				<h3>Description:</h3><br>
 				<p>Simulated a gas station with 4 pumps & multiple customers filling cars as well as making payments.<br>
 				Pseudo-random generation of customer information (ie: payment details, amount of gas, names, etc.)<br><br>

@@ -4,6 +4,7 @@
 	font-family: Arial black;
 	box-sizing: border-box;
 	text-decoration: none;
+	line-height: 1.2;
 }
 
 /* Body */
@@ -79,9 +80,9 @@ body, html {
 }
 
 .container {
-	/*
-	background-image: url(images/bg.jpg);
-	*/
+/*	
+	background-image: url(http://www.hdwallpaperspulse.com/wp-content/uploads/2017/01/28/awesome-natural-wallpaper-hd.jpg);
+*/
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-color: black;
@@ -144,6 +145,12 @@ body, html {
 	padding-left: 20px;
 }
 
+.projects h5 {
+	padding-left: 20px;
+	font-style: italic;
+	color: grey;
+}
+
 .projects p {
 	padding-left: 20px;
 	font-family: Arial;
@@ -155,11 +162,11 @@ body, html {
 }
 
 .projects img {
-	max-width: 40%;
-	max-height: 50%;
+	max-width: 80%;
+	max-height: 100%;
 	height: auto;
 	/*flex: 0.5;*/
-	padding: 20px;
+	padding-left: 20px;
 }
 
 .projects iframe {
@@ -224,9 +231,9 @@ body, html {
 	float: left;
 	/*border: 1px solid #ccc;*/
 	border-left: none;
-	padding: 0px 80px;
+	padding: 0px 20vw;
 	width: 80%;
-	height: 80%;
+	height: 85%;
 	z-index: 400;
 	overflow-y: auto;
 }
@@ -311,29 +318,38 @@ hr.solidLine {
 		background-color: #ddd;
 		filter: invert(0);
 	}
-
+/*
 	.projects h1{
 		font-size: 3vw;
 		margin-bottom: 20px;
 		text-align: center;
 	}
-	
+*/	
 	.projects h2{
 		font-size: 2vw;
 		padding: 0px;
 	}
-	
+/*
 	.projects h3 {
 		font-size: 2vw;
 	}
 	
+	.projects p {
+		font-size: 1vw;
+	}
+*/	
 	.projects img {
-		width: 120%;
+		display: block;
+		max-width: 100%;
 		height: auto;
 	}
 	
 	.projects iframe {
 		display: none;
+	}
+	
+	.tabcontent {
+		padding: 0 15px;
 	}
 }
 
