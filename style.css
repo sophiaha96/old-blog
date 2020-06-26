@@ -285,13 +285,14 @@ hr.solidLine {
 
 	.projects h1{
 		text-align: center;
+		padding-bottom: 1vh;
 	}	
-/*	
+	
 	.projects h2{
 		font-size: 2vw;
 		padding: 0px;
 	}
-
+/*
 	.projects h3 {
 		font-size: 2vw;
 	}
