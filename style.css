@@ -88,7 +88,7 @@ body, html {
 	background-color: black;
 	background-size: cover;
 	max-width: 100%;
-	height: 110%;
+	height: 100%;
 	width: auto;
 	z-index: 0;
 }
@@ -104,14 +104,6 @@ body, html {
 }
 
 .projects {
-	/*
-	background-position: center center;
-	background-size: cover;
-	background-color: white;
-	height: 100%;
-	width: 100%;
-	z-index: 400;
-	*/
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-color: #222;
@@ -120,12 +112,6 @@ body, html {
 	height: 100%;
 	width: auto;
 	color: white;
-/*
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-wrap: wrap; 
-	flex-wrap: wrap;
-*/
 }
 
 .projects h1 {
@@ -172,27 +158,6 @@ body, html {
 .projects iframe {
 	padding: 20px;
 }
-
-/* 2 unequal columns beside each other */
-/* Sidebar or left column */
-/*
-.side {
-	-ms-flex: 0.187;
-	flex: 0.187;
-	background-color: #f1f1f1;
-	padding: 20px;
-}
-*/
-
-/* Main column */
-/*
-.main {	
-	-ms-flex: 0.813; 
-	flex: 0.813;
-	background-color: white;
-	padding: 20px;
-}
-*/
 
 /* Tab Sections */
 .tab {
@@ -249,7 +214,6 @@ body, html {
 	text-align: center;
 	z-index: 0;
 }
-
 
 .resume a {
 	color: #ccc;
@@ -353,9 +317,7 @@ hr.solidLine {
 	}
 }
 
-
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-
+/* Responsive layout - when the screen is less than 750px wide */
 @media screen and (max-height: 750px) {	
 	.projects {
 		height: 170%;
