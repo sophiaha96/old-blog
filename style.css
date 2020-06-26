@@ -282,18 +282,16 @@ hr.solidLine {
 		background-color: #ddd;
 		filter: invert(0);
 	}
-/*
+
 	.projects h1{
-		font-size: 3vw;
-		margin-bottom: 20px;
 		text-align: center;
-	}
-*/	
+	}	
+/*	
 	.projects h2{
 		font-size: 2vw;
 		padding: 0px;
 	}
-/*
+
 	.projects h3 {
 		font-size: 2vw;
 	}
@@ -313,7 +311,7 @@ hr.solidLine {
 	}
 	
 	.tabcontent {
-		padding: 0 15px;
+		padding: 0 10px;
 	}
 }
 
