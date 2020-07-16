@@ -1,4 +1,4 @@
-Website designed and created by Sophia Ha <br>
+Website designed, created, and content written by Sophia Ha <br>
 Feel free to use code, but keep the source link <br><br>
 
 References:<br>
